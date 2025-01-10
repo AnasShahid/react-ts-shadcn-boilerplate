@@ -1,3 +1,5 @@
+import { fontConfig, fontSizes, spacing, borderRadius, shadows } from './src/styles/theme.config'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
@@ -51,11 +53,11 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
+      fontFamily: fontConfig,
+      fontSize: fontSizes,
+      spacing: spacing,
+      borderRadius: borderRadius,
+      boxShadow: shadows,
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
