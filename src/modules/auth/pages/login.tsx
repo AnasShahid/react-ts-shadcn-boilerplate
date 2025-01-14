@@ -1,12 +1,11 @@
 import { useState } from 'react'
-// import { useNavigate, Link } from 'react-router-dom'
+ import { Link } from 'react-router-dom'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 
 export function LoginPage() {
-  // const navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: '',
     password: '',
