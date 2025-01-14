@@ -1,9 +1,11 @@
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "@/hooks/use-theme"
 import { Switch } from "./ui/switch"
+import { useTranslation } from 'react-i18next'
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
+  const { t } = useTranslation()
 
   const handleToggle = (checked: boolean) => {
     setTheme(checked ? "dark" : "light")
@@ -15,7 +17,7 @@ export function ThemeToggle() {
       <Switch
         checked={theme === "dark"}
         onCheckedChange={handleToggle}
-        aria-label="Toggle theme"
+        aria-label={t('common.theme.dark')}
       />
       <Moon className="h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
     </div>

@@ -1,0 +1,33 @@
+{
+  "common": {
+    "welcome": "Bienvenido a React + TypeScript + Shadcn UI",
+    "navigation": {
+      "home": "Inicio",
+      "pricing": "Precios",
+      "login": "Iniciar Sesión",
+      "signup": "Registrarse",
+      "dashboard": "Panel",
+      "profile": "Perfil",
+      "settings": "Configuración",
+      "logout": "Cerrar Sesión"
+    },
+    "theme": {
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
+    }
+  },
+  "home": {
+    "title": "Plantilla Moderna de React",
+    "subtitle": "Comienza tu próximo proyecto con TypeScript, React y Shadcn UI",
+    "getStarted": "Comenzar",
+    "learnMore": "Más Información",
+    "features": {
+      "title": "Características",
+      "typescript": "Soporte TypeScript",
+      "components": "Componentes Reutilizables",
+      "themes": "Temas Claro/Oscuro",
+      "i18n": "Internacionalización"
+    }
+  }
+}

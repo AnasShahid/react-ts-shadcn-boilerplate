@@ -1,0 +1,32 @@
+{
+  "pricing": {
+    "title": "Pricing Plans",
+    "subtitle": "Choose the perfect plan for your needs",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "description": "For personal projects",
+        "price": "Free",
+        "period": "/month"
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "For professional use",
+        "price": "$9.99",
+        "period": "/month"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For large teams",
+        "price": "Custom",
+        "period": "/month"
+      }
+    },
+    "cta": {
+      "getStarted": "Get Started",
+      "contactUs": "Contact Us"
+    }
+  }
+}

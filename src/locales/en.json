@@ -1,0 +1,33 @@
+{
+  "common": {
+    "welcome": "Welcome to React + TypeScript + Shadcn UI",
+    "navigation": {
+      "home": "Home",
+      "pricing": "Pricing",
+      "login": "Login",
+      "signup": "Sign Up",
+      "dashboard": "Dashboard",
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
+  "home": {
+    "title": "Modern React Boilerplate",
+    "subtitle": "Start your next project with TypeScript, React, and Shadcn UI",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "features": {
+      "title": "Features",
+      "typescript": "TypeScript Support",
+      "components": "Reusable Components",
+      "themes": "Dark/Light Themes",
+      "i18n": "Internationalization"
+    }
+  }
+}

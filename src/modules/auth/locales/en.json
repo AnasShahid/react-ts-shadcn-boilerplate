@@ -1,0 +1,37 @@
+{
+  "auth": {
+    "login": {
+      "title": "Login",
+      "description": "Enter your credentials to access your account",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "password": "Password",
+      "submit": "Sign In",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign Up",
+      "rememberMe": "Remember me"
+    },
+    "register": {
+      "title": "Create an Account",
+      "description": "Sign up for a new account",
+      "name": "Full Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Sign Up",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign In",
+      "termsAccept": "I accept the terms and conditions"
+    },
+    "forgotPassword": {
+      "title": "Reset Password",
+      "description": "Enter your email to reset your password",
+      "email": "Email",
+      "submit": "Send Reset Link",
+      "backToLogin": "Back to Login"
+    }
+  }
+}
