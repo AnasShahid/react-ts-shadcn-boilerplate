@@ -15,7 +15,8 @@
       "light": "Claro",
       "dark": "Oscuro",
       "system": "Sistema"
-    }
+    },
+    "settings": "Configuración"
   },
   "home": {
     "title": "Plantilla Moderna de React",

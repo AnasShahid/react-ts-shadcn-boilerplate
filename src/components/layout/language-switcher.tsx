@@ -15,13 +15,12 @@ export function LanguageSwitcher() {
     { code: 'es', name: 'Español' },
   ];
 
-  const handleLanguageChange = (value: string) => {
-    i18n.changeLanguage(value);
-  };
-
   return (
-    <Select onValueChange={handleLanguageChange} defaultValue={i18n.language}>
-      <SelectTrigger className="w-[120px]">
+    <Select
+      value={i18n.language}
+      onValueChange={(value) => i18n.changeLanguage(value)}
+    >
+      <SelectTrigger className="w-[100px] h-8">
         <SelectValue placeholder="Language" />
       </SelectTrigger>
       <SelectContent>

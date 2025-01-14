@@ -6,13 +6,13 @@ import {
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+} from "@/components/layout/navigation-menu";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { navigationConfig } from "@/config/navigation";
 import { useTranslation } from 'react-i18next';
-import { LanguageSwitcher } from "@/components/language-switcher";
+import { SettingsMenu } from "@/components/layout/settings-menu";
 
 function Header() {
     const [isOpen, setOpen] = useState(false);
@@ -51,8 +51,8 @@ function Header() {
             </div>
 
             {/* Right Navigation */}
-            <div className="hidden lg:flex items-center gap-4">
-                <NavigationMenu>
+            <div className="flex items-center gap-4">
+                <NavigationMenu className="hidden lg:flex">
                     <NavigationMenuList>
                         {rightNavItems.map((item) => (
                             <NavigationMenuItem key={item.title}>
@@ -69,53 +69,56 @@ function Header() {
                     </NavigationMenuList>
                 </NavigationMenu>
 
-                <div className="flex items-center gap-4 ml-4">
-                    <div className="h-4 w-px bg-border hidden md:inline"></div>
-                    <LanguageSwitcher />
+                <div className="hidden lg:flex items-center gap-4">
                     <Link to={authNav.href} className="text-sm font-medium text-primary hover:bg-primary/90 rounded-md">
                         <Button variant="outline">{t('common.navigation.login')}</Button>
                     </Link>
                     <Button>{t('home.getStarted')}</Button>
                 </div>
-            </div>
 
-            {/* Mobile Menu Button */}
-            <Button
-                variant="ghost"
-                className="lg:hidden"
-                size="icon"
-                onClick={() => setOpen(!isOpen)}
-            >
-                {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+                {/* Settings Menu */}
+                <SettingsMenu />
+
+                {/* Mobile Menu Button */}
+                <Button
+                    variant="ghost"
+                    className="lg:hidden"
+                    size="icon"
+                    onClick={() => setOpen(!isOpen)}
+                >
+                    {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </Button>
+            </div>
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="absolute top-[4rem] left-0 right-0 bg-background border-t p-4 lg:hidden">
-                    <nav className="flex flex-col gap-4">
-                        {mainNav.map((item) => (
-                            <Link
-                                key={item.title}
-                                to={item.href}
-                                className="px-4 py-2 text-sm hover:bg-accent rounded-md"
-                                onClick={() => setOpen(false)}
-                            >
-                                {t(`common.navigation.${item.title.toLowerCase()}`)}
-                            </Link>
-                        ))}
-                        <div className="border-t pt-4 mt-4">
-                            <Link
-                                to={authNav.href}
-                                className="px-4 py-2 text-sm hover:bg-accent rounded-md block"
-                                onClick={() => setOpen(false)}
-                            >
-                                {t('common.navigation.login')}
-                            </Link>
-                            <Button className="w-full mt-4">{t('home.getStarted')}</Button>
-                            <div className="mt-4">
-                                <LanguageSwitcher />
-                            </div>
-                        </div>
+                <div className="fixed inset-0 top-[4rem] z-50 bg-background border-t lg:hidden">
+                    <nav className="container mx-auto px-4 py-6">
+                        <ul className="space-y-4">
+                            {mainNav.map((item) => (
+                                <li key={item.title}>
+                                    <Link
+                                        to={item.href}
+                                        className="block text-lg font-medium text-primary hover:text-accent-foreground"
+                                        onClick={() => setOpen(false)}
+                                    >
+                                        {t(`common.navigation.${item.title.toLowerCase()}`)}
+                                    </Link>
+                                </li>
+                            ))}
+                            <li className="border-t pt-4 mt-4">
+                                <Link
+                                    to={authNav.href}
+                                    className="block text-lg font-medium text-primary hover:text-accent-foreground"
+                                    onClick={() => setOpen(false)}
+                                >
+                                    {t('common.navigation.login')}
+                                </Link>
+                            </li>
+                            <li className="mt-4">
+                                <Button className="w-full">{t('home.getStarted')}</Button>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
             )}

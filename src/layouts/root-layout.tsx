@@ -1,7 +1,6 @@
 import '@/styles/globals.css'
 import { Outlet } from 'react-router-dom'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { Header } from "@/components/ui/header"
+import { Header } from "@/components/layout/header"
 
 export default function RootLayout() {
   return (
@@ -14,9 +13,6 @@ export default function RootLayout() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="fixed top-3 right-4 z-50">
-        <ThemeToggle />
       </div>
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <Outlet />

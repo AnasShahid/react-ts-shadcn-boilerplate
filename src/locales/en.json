@@ -15,7 +15,8 @@
       "light": "Light",
       "dark": "Dark",
       "system": "System"
-    }
+    },
+    "settings": "Settings"
   },
   "home": {
     "title": "Modern React Boilerplate",
