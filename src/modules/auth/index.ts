@@ -6,3 +6,4 @@ export * from './store/epics';
 export * from './services/api';
 export * from './hooks';
 export * from './types';
+export * from './routes';
