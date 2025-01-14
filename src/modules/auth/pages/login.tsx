@@ -1,23 +1,30 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
 
 export function LoginPage() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-  })
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // TODO: Implement login logic
-    console.log('Login:', formData)
-  }
+    console.log('Login:', formData);
+  };
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
@@ -66,5 +73,5 @@ export function LoginPage() {
         </form>
       </Card>
     </div>
-  )
+  );
 }

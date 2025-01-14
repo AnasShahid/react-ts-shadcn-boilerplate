@@ -1,6 +1,6 @@
-import '@/styles/globals.css'
-import { Outlet } from 'react-router-dom'
-import { Header } from "@/components/layout/header"
+import '@/styles/globals.css';
+import { Outlet } from 'react-router-dom';
+import { Header } from '@/components/layout/header';
 
 export default function RootLayout() {
   return (
@@ -18,5 +18,5 @@ export default function RootLayout() {
         <Outlet />
       </main>
     </div>
-  )
+  );
 }
