@@ -1,8 +1,15 @@
-import { Check, X } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { PricingPlan } from "../config/plans";
+import { Check, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { PricingPlan } from '../config/plans';
 
 interface PricingCardProps {
   plan: PricingPlan;
@@ -20,7 +27,9 @@ export function PricingCard({ plan }: PricingCardProps) {
       <CardContent>
         <div className="mb-4">
           <span className="text-3xl font-bold">${plan.price}</span>
-          <span className="text-muted-foreground">/{t(`pricing.billingPeriod.${plan.billingPeriod}`)}</span>
+          <span className="text-muted-foreground">
+            /{t(`pricing.billingPeriod.${plan.billingPeriod}`)}
+          </span>
         </div>
         <ul className="space-y-2">
           {plan.features.map((feature) => (
@@ -32,16 +41,14 @@ export function PricingCard({ plan }: PricingCardProps) {
               )}
               <span className="text-sm">
                 {feature.name}
-                {feature.limit && (
-                  <span className="text-muted-foreground"> ({feature.limit})</span>
-                )}
+                {feature.limit && <span className="text-muted-foreground"> ({feature.limit})</span>}
               </span>
             </li>
           ))}
         </ul>
       </CardContent>
       <CardFooter>
-        <Button className="w-full" variant={plan.highlighted ? "default" : "outline"}>
+        <Button className="w-full" variant={plan.highlighted ? 'default' : 'outline'}>
           {t('pricing.getStarted')}
         </Button>
       </CardFooter>
