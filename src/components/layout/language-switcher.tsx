@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from '@/components/ui/select';
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -16,10 +16,7 @@ export function LanguageSwitcher() {
   ];
 
   return (
-    <Select
-      value={i18n.language}
-      onValueChange={(value) => i18n.changeLanguage(value)}
-    >
+    <Select value={i18n.language} onValueChange={(value) => i18n.changeLanguage(value)}>
       <SelectTrigger className="w-[100px] h-8">
         <SelectValue placeholder="Language" />
       </SelectTrigger>
