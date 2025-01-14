@@ -7,8 +7,7 @@ const epicMiddleware = createEpicMiddleware();
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(epicMiddleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(epicMiddleware),
 });
 
 epicMiddleware.run(rootEpic);

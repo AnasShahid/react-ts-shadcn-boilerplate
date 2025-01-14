@@ -1,6 +1,6 @@
-import { Settings } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { Button } from "@/components/ui/button";
+import { Settings } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,9 +9,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ThemeToggle } from "./theme-toggle";
-import { LanguageSwitcher } from "./language-switcher";
+} from '@/components/ui/dropdown-menu';
+import { ThemeToggle } from './theme-toggle';
+import { LanguageSwitcher } from './language-switcher';
 
 export function SettingsMenu() {
   const { t } = useTranslation();
@@ -19,11 +19,7 @@ export function SettingsMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="h-9 w-9 border-0 hover:bg-accent"
-        >
+        <Button variant="ghost" size="icon" className="h-9 w-9 border-0 hover:bg-accent">
           <Settings className="h-[1.2rem] w-[1.2rem] text-muted-foreground" />
           <span className="sr-only">Toggle settings</span>
         </Button>

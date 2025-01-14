@@ -37,11 +37,13 @@ src/
 ## Modules
 
 ### Core
+
 - **Theme Provider** - Manages application theming with dark/light mode support
 - **i18n Provider** - Handles internationalization with language switching
 - **Layout Components** - Header, Navigation Menu, and Settings Menu
 
 ### Features
+
 - **Settings Menu** - Centralized settings management with:
   - Theme Toggle (Dark/Light mode)
   - Language Switcher (English/Spanish)
@@ -59,16 +61,19 @@ src/
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone [repository-url]
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
