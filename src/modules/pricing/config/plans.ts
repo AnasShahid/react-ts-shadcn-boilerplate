@@ -53,8 +53,8 @@ export const pricingPlans: PricingPlan[] = [
     price: 50,
     billingPeriod: 'monthly',
     features: [
-      { name: 'AI Text Generation', included: true, limit: 'Unlimited' },
-      { name: 'Image Analysis', included: true, limit: 'Unlimited' },
+      { name: 'AI Text Generation', included: true, limit: '100,000 words/month' },
+      { name: 'Image Analysis', included: true, limit: '5,000 images/month' },
       { name: 'API Access', included: true },
       { name: 'Custom Models', included: true },
       { name: 'Priority Support', included: true },

@@ -1,32 +1,37 @@
 {
   "pricing": {
-    "title": "Pricing Plans",
-    "subtitle": "Choose the perfect plan for your needs",
-    "monthly": "Monthly",
-    "yearly": "Yearly",
+    "title": "Simple, transparent pricing",
+    "subtitle": "Choose the plan that's right for you",
+    "getStarted": "Get Started",
+    "billingPeriod": {
+      "monthly": "monthly",
+      "yearly": "yearly"
+    },
     "plans": {
       "free": {
         "name": "Free",
-        "description": "For personal projects",
-        "price": "Free",
-        "period": "/month"
+        "description": "Perfect for trying out our AI features"
       },
       "pro": {
         "name": "Pro",
-        "description": "For professional use",
-        "price": "$9.99",
-        "period": "/month"
+        "description": "Best for professionals and small teams"
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "For large teams",
-        "price": "Custom",
-        "period": "/month"
+        "description": "For organizations with advanced needs"
       }
     },
-    "cta": {
-      "getStarted": "Get Started",
-      "contactUs": "Contact Us"
+    "features": {
+      "aiTextGeneration": "AI Text Generation",
+      "imageAnalysis": "Image Analysis",
+      "apiAccess": "API Access",
+      "customModels": "Custom Models",
+      "prioritySupport": "Priority Support",
+      "teamCollaboration": "Team Collaboration",
+      "limits": {
+        "wordsPerMonth": "{{count}} words/month",
+        "imagesPerMonth": "{{count}} images/month"
+      }
     }
   }
 }

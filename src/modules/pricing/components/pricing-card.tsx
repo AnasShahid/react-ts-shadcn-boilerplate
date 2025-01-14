@@ -1,4 +1,5 @@
 import { Check, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { PricingPlan } from "../config/plans";
@@ -8,16 +9,18 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ plan }: PricingCardProps) {
+  const { t } = useTranslation();
+
   return (
     <Card className={`w-[300px] ${plan.highlighted ? 'border-primary shadow-lg' : ''}`}>
       <CardHeader>
-        <CardTitle>{plan.name}</CardTitle>
-        <CardDescription>{plan.description}</CardDescription>
+        <CardTitle>{t(`pricing.plans.${plan.id}.name`)}</CardTitle>
+        <CardDescription>{t(`pricing.plans.${plan.id}.description`)}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="mb-4">
           <span className="text-3xl font-bold">${plan.price}</span>
-          <span className="text-muted-foreground">/{plan.billingPeriod}</span>
+          <span className="text-muted-foreground">/{t(`pricing.billingPeriod.${plan.billingPeriod}`)}</span>
         </div>
         <ul className="space-y-2">
           {plan.features.map((feature) => (
@@ -39,7 +42,7 @@ export function PricingCard({ plan }: PricingCardProps) {
       </CardContent>
       <CardFooter>
         <Button className="w-full" variant={plan.highlighted ? "default" : "outline"}>
-          Get Started
+          {t('pricing.getStarted')}
         </Button>
       </CardFooter>
     </Card>
