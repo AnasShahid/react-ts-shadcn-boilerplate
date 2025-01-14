@@ -1,9 +1,16 @@
-import { useState } from 'react'
-import {  Link } from 'react-router-dom'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
 
 export function SignupPage() {
   const [formData, setFormData] = useState({
@@ -11,22 +18,20 @@ export function SignupPage() {
     email: '',
     password: '',
     confirmPassword: '',
-  })
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // TODO: Implement signup logic
-    console.log('Signup:', formData)
-  }
+    console.log('Signup:', formData);
+  };
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Create Account</CardTitle>
-          <CardDescription>
-            Enter your details to create a new account
-          </CardDescription>
+          <CardDescription>Enter your details to create a new account</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
@@ -86,5 +91,5 @@ export function SignupPage() {
         </form>
       </Card>
     </div>
-  )
+  );
 }

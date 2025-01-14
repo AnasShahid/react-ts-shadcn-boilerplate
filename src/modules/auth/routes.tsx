@@ -1,6 +1,6 @@
-import { RouteObject } from 'react-router-dom'
-import { LoginPage } from './pages/login'
-import { SignupPage } from './pages/signup'
+import { RouteObject } from 'react-router-dom';
+import { LoginPage } from './pages/login';
+import { SignupPage } from './pages/signup';
 
 export const authRoutes: RouteObject[] = [
   {
@@ -16,4 +16,4 @@ export const authRoutes: RouteObject[] = [
       },
     ],
   },
-]
+];

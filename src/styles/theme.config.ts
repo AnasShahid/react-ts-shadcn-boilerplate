@@ -1,53 +1,53 @@
 export const themeColors = {
   light: {
-    background: "0 0% 100%",
-    foreground: "222.2 84% 4.9%",
-    muted: "210 40% 96.1%",
-    "muted-foreground": "215.4 16.3% 46.9%",
-    popover: "0 0% 100%",
-    "popover-foreground": "222.2 84% 4.9%",
-    card: "0 0% 100%",
-    "card-foreground": "222.2 84% 4.9%",
-    border: "214.3 31.8% 91.4%",
-    input: "214.3 31.8% 91.4%",
-    primary: "222.2 47.4% 11.2%",
-    "primary-foreground": "210 40% 98%",
-    secondary: "210 40% 96.1%",
-    "secondary-foreground": "222.2 47.4% 11.2%",
-    accent: "210 40% 96.1%",
-    "accent-foreground": "222.2 47.4% 11.2%",
-    destructive: "0 84.2% 60.2%",
-    "destructive-foreground": "210 40% 98%",
-    ring: "215 20.2% 65.1%",
+    background: '0 0% 100%',
+    foreground: '222.2 84% 4.9%',
+    muted: '210 40% 96.1%',
+    'muted-foreground': '215.4 16.3% 46.9%',
+    popover: '0 0% 100%',
+    'popover-foreground': '222.2 84% 4.9%',
+    card: '0 0% 100%',
+    'card-foreground': '222.2 84% 4.9%',
+    border: '214.3 31.8% 91.4%',
+    input: '214.3 31.8% 91.4%',
+    primary: '222.2 47.4% 11.2%',
+    'primary-foreground': '210 40% 98%',
+    secondary: '210 40% 96.1%',
+    'secondary-foreground': '222.2 47.4% 11.2%',
+    accent: '210 40% 96.1%',
+    'accent-foreground': '222.2 47.4% 11.2%',
+    destructive: '0 84.2% 60.2%',
+    'destructive-foreground': '210 40% 98%',
+    ring: '215 20.2% 65.1%',
   },
   dark: {
-    background: "222.2 84% 4.9%",
-    foreground: "210 40% 98%",
-    muted: "217.2 32.6% 17.5%",
-    "muted-foreground": "215 20.2% 65.1%",
-    popover: "222.2 84% 4.9%",
-    "popover-foreground": "210 40% 98%",
-    card: "222.2 84% 4.9%",
-    "card-foreground": "210 40% 98%",
-    border: "217.2 32.6% 17.5%",
-    input: "217.2 32.6% 17.5%",
-    primary: "210 40% 98%",
-    "primary-foreground": "222.2 47.4% 11.2%",
-    secondary: "217.2 32.6% 17.5%",
-    "secondary-foreground": "210 40% 98%",
-    accent: "217.2 32.6% 17.5%",
-    "accent-foreground": "210 40% 98%",
-    destructive: "0 62.8% 30.6%",
-    "destructive-foreground": "0 85.7% 97.3%",
-    ring: "217.2 32.6% 17.5%",
+    background: '222.2 84% 4.9%',
+    foreground: '210 40% 98%',
+    muted: '217.2 32.6% 17.5%',
+    'muted-foreground': '215 20.2% 65.1%',
+    popover: '222.2 84% 4.9%',
+    'popover-foreground': '210 40% 98%',
+    card: '222.2 84% 4.9%',
+    'card-foreground': '210 40% 98%',
+    border: '217.2 32.6% 17.5%',
+    input: '217.2 32.6% 17.5%',
+    primary: '210 40% 98%',
+    'primary-foreground': '222.2 47.4% 11.2%',
+    secondary: '217.2 32.6% 17.5%',
+    'secondary-foreground': '210 40% 98%',
+    accent: '217.2 32.6% 17.5%',
+    'accent-foreground': '210 40% 98%',
+    destructive: '0 62.8% 30.6%',
+    'destructive-foreground': '0 85.7% 97.3%',
+    ring: '217.2 32.6% 17.5%',
   },
-} as const
+} as const;
 
 export const fontConfig = {
   sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
   heading: ['var(--font-heading)', 'system-ui', 'sans-serif'],
   mono: ['var(--font-mono)', 'monospace'],
-} as const
+} as const;
 
 export const fontSizes = {
   xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -59,7 +59,7 @@ export const fontSizes = {
   '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
   '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
   '5xl': ['3rem', { lineHeight: '1' }],
-} as const
+} as const;
 
 export const spacing = {
   px: '1px',
@@ -97,7 +97,7 @@ export const spacing = {
   72: '18rem',
   80: '20rem',
   96: '24rem',
-} as const
+} as const;
 
 export const borderRadius = {
   none: '0',
@@ -105,7 +105,7 @@ export const borderRadius = {
   md: 'calc(var(--radius) - 2px)',
   lg: 'var(--radius)',
   full: '9999px',
-} as const
+} as const;
 
 export const shadows = {
   sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -116,4 +116,4 @@ export const shadows = {
   '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
   inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
   none: 'none',
-} as const
+} as const;
