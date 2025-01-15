@@ -75,16 +75,39 @@ npm install
 3. Start the development server:
 
 ```bash
-npm run dev
+npm run sever
 ```
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
+```bash
+# Development
+npm run server           # Start development server
+npm run server:qa       # Start QA environment server
+npm run server:prod     # Start production environment server
+
+# Building
+npm run build           # Build for development
+npm run build:qa        # Build for QA
+npm run build:prod      # Build for production
+
+# Preview
+npm run preview         # Preview development build
+npm run preview:qa      # Preview QA build
+npm run preview:prod    # Preview production build
+
+# Testing
+npm run test            # Run tests
+npm run test:watch      # Run tests in watch mode
+npm run test:module     # Run tests for specific module
+
+# Code Quality
+npm run lint            # Run ESLint
+npm run format          # Format code with Prettier
+
+# Other
+npm run prepare         # Install husky hooks
+```
 
 ## Contributing
 
