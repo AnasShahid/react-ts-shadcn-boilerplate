@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { PricingCard } from '../components/pricing-card';
-import { pricingPlans } from '../config/plans';
+import { pricingPlans } from '../config/pricing-plans.config';
 
 export default function PricingPage() {
   const { t } = useTranslation();

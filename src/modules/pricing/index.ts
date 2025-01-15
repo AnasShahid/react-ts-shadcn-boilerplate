@@ -1,2 +1,2 @@
 export * from './routes';
-export * from './config/plans';
+export * from './types/pricing-plan';

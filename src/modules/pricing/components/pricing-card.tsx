@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { PricingPlan } from '../config/plans';
+import { PricingPlan } from '../types/pricing-plan';
 
 interface PricingCardProps {
   plan: PricingPlan;
