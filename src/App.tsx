@@ -4,6 +4,7 @@ import { useEnv } from './hooks/use-env';
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import { ConfigProvider, theme } from 'antd';
 
 function App() {
   const env = useEnv();
@@ -16,7 +17,16 @@ function App() {
 
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <ConfigProvider
+        theme={{
+          algorithm: theme.defaultAlgorithm,
+          token: {
+            colorPrimary: '#1677ff',
+          },
+        }}
+      >
+        <RouterProvider router={router} />
+      </ConfigProvider>
     </Provider>
   );
 }

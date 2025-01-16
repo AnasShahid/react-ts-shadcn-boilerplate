@@ -1,32 +1,25 @@
+import { Select } from 'antd';
+import { GlobalOutlined } from '@ant-design/icons';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 
-export function LanguageSwitcher() {
+export const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
 
-  const languages = [
-    { code: 'en', name: 'English' },
-    { code: 'es', name: 'Español' },
-  ];
+  const handleLanguageChange = (value: string) => {
+    i18n.changeLanguage(value);
+  };
 
   return (
-    <Select value={i18n.language} onValueChange={(value) => i18n.changeLanguage(value)}>
-      <SelectTrigger className="w-[100px] h-8">
-        <SelectValue placeholder="Language" />
-      </SelectTrigger>
-      <SelectContent>
-        {languages.map((lang) => (
-          <SelectItem key={lang.code} value={lang.code}>
-            {lang.name}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <Select
+      defaultValue={i18n.language}
+      onChange={handleLanguageChange}
+      options={[
+        { value: 'en', label: 'English' },
+        { value: 'es', label: 'Español' },
+      ]}
+      prefix={<GlobalOutlined />}
+      style={{ width: 120 }}
+    />
   );
-}
+};

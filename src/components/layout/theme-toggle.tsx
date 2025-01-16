@@ -1,22 +1,20 @@
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '@/hooks/use-theme';
-import { Switch } from '@/components/ui/switch';
-import { useTranslation } from 'react-i18next';
+import { Switch, Space } from 'antd';
+import { BulbOutlined, BulbFilled } from '@ant-design/icons';
+import React from 'react';
+import { useTheme } from '../../hooks/use-theme';
 
-export function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
-  const { t } = useTranslation();
+export const ThemeToggle: React.FC = () => {
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="flex items-center gap-2 px-2">
-      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:rotate-90 dark:scale-0" />
+    <Space>
+      <span>Theme</span>
       <Switch
         checked={theme === 'dark'}
-        onCheckedChange={(checked) => setTheme(checked ? 'dark' : 'light')}
-        aria-label={t('common.theme.dark')}
-        className="h-6"
+        onChange={toggleTheme}
+        checkedChildren={<BulbFilled />}
+        unCheckedChildren={<BulbOutlined />}
       />
-      <Moon className="h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-    </div>
+    </Space>
   );
-}
+};

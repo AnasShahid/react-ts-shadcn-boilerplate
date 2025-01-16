@@ -1,15 +1,9 @@
-import { Check, X } from 'lucide-react';
+import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, Button, Typography, List } from 'antd';
 import { PricingPlan } from '../types/pricing-plan';
+
+const { Title, Text } = Typography;
 
 interface PricingCardProps {
   plan: PricingPlan;
@@ -19,39 +13,57 @@ export function PricingCard({ plan }: PricingCardProps) {
   const { t } = useTranslation();
 
   return (
-    <Card className={`w-[300px] ${plan.highlighted ? 'border-primary shadow-lg' : ''}`}>
-      <CardHeader>
-        <CardTitle>{t(`pricing.plans.${plan.id}.name`)}</CardTitle>
-        <CardDescription>{t(`pricing.plans.${plan.id}.description`)}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="mb-4">
-          <span className="text-3xl font-bold">${plan.price}</span>
-          <span className="text-muted-foreground">
-            /{t(`pricing.billingPeriod.${plan.billingPeriod}`)}
-          </span>
-        </div>
-        <ul className="space-y-2">
-          {plan.features.map((feature) => (
-            <li key={feature.name} className="flex items-center gap-2">
+    <Card
+      style={{
+        width: 300,
+        borderColor: plan.highlighted ? '#1677ff' : undefined,
+        boxShadow: plan.highlighted ? '0 2px 8px rgba(0, 0, 0, 0.15)' : undefined,
+      }}
+    >
+      <Title level={4} style={{ marginBottom: 8 }}>
+        {t(`pricing.plans.${plan.id}.name`)}
+      </Title>
+      <Text type="secondary" style={{ display: 'block', marginBottom: 24 }}>
+        {t(`pricing.plans.${plan.id}.description`)}
+      </Text>
+
+      <div style={{ marginBottom: 24 }}>
+        <Title level={2} style={{ margin: 0, display: 'inline' }}>
+          ${plan.price}
+        </Title>
+        <Text type="secondary" style={{ marginLeft: 4 }}>
+          /{t(`pricing.billingPeriod.${plan.billingPeriod}`)}
+        </Text>
+      </div>
+
+      <List
+        size="small"
+        dataSource={plan.features}
+        style={{ marginBottom: 24 }}
+        renderItem={(feature) => (
+          <List.Item style={{ padding: '8px 0' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               {feature.included ? (
-                <Check className="h-4 w-4 text-primary" />
+                <CheckOutlined style={{ color: '#52c41a' }} />
               ) : (
-                <X className="h-4 w-4 text-muted-foreground" />
+                <CloseOutlined style={{ color: '#00000040' }} />
               )}
-              <span className="text-sm">
+              <Text>
                 {feature.name}
-                {feature.limit && <span className="text-muted-foreground"> ({feature.limit})</span>}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-      <CardFooter>
-        <Button className="w-full" variant={plan.highlighted ? 'default' : 'outline'}>
-          {t('pricing.getStarted')}
-        </Button>
-      </CardFooter>
+                {feature.limit && (
+                  <Text type="secondary" style={{ marginLeft: 4 }}>
+                    ({feature.limit})
+                  </Text>
+                )}
+              </Text>
+            </div>
+          </List.Item>
+        )}
+      />
+
+      <Button type={plan.highlighted ? 'primary' : 'default'} block>
+        {t('pricing.getStarted')}
+      </Button>
     </Card>
   );
 }

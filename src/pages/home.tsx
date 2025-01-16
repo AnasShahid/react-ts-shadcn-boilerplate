@@ -11,10 +11,10 @@ export default function Home() {
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-4">{t('home.title')}</h1>
         <p className="text-xl text-muted-foreground mb-8">{t('home.subtitle')}</p>
         <div className="flex justify-center gap-4">
-          <Button asChild>
+          <Button>
             <Link to="/auth/signup">{t('home.getStarted')}</Link>
           </Button>
-          <Button variant="outline">{t('home.learnMore')}</Button>
+          <Button type="default">{t('home.learnMore')}</Button>
         </div>
       </div>
 

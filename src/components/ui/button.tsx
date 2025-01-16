@@ -1,36 +1,15 @@
-import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
-import type { VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
-import { buttonVariants } from './button-variants';
+import { Button as AntButton } from 'antd';
+import { ButtonProps as AntButtonProps } from 'antd/lib/button';
+import React from 'react';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
+export interface ButtonProps extends AntButtonProps {
+  children: React.ReactNode;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (props.onClick) {
-        props.onClick(e);
-      }
-      // Remove focus after click
-      (e.target as HTMLElement).blur();
-    };
+export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
+  return <AntButton {...props}>{children}</AntButton>;
+};
 
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-        onClick={handleClick}
-      />
-    );
-  }
-);
-Button.displayName = 'Button';
-
-export { Button };
+Button.defaultProps = {
+  type: 'primary',
+};
