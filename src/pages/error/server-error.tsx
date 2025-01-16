@@ -17,17 +17,13 @@ export function ServerErrorPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">
-            {t('error.serverError.description')}
-          </p>
+          <p className="text-muted-foreground">{t('error.serverError.description')}</p>
         </CardContent>
         <CardFooter className="flex justify-center gap-4">
           <Button asChild variant="outline">
             <Link to="/">{t('error.action.backHome')}</Link>
           </Button>
-          <Button onClick={() => navigate(0)}>
-            {t('error.action.tryAgain')}
-          </Button>
+          <Button onClick={() => navigate(0)}>{t('error.action.tryAgain')}</Button>
         </CardFooter>
       </Card>
     </div>

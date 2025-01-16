@@ -16,9 +16,7 @@ export function UnauthorizedPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">
-            {t('error.unauthorized.description')}
-          </p>
+          <p className="text-muted-foreground">{t('error.unauthorized.description')}</p>
         </CardContent>
         <CardFooter className="flex justify-center gap-4">
           <Button asChild variant="outline">
