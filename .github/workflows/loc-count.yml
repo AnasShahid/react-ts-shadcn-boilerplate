@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Count Lines of Code
-        uses: ducme/loc-count@v1
+        uses: PavanMudigonda/lines-of-code-reporter@v1.6
