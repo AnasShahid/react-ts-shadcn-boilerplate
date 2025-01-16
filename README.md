@@ -1,11 +1,11 @@
-# React + TypeScript + Shadcn UI Boilerplate
+# React + TypeScript + Ant Design Boilerplate
 
-A modern, feature-rich boilerplate for building React applications with TypeScript and Shadcn UI components.
+A modern, feature-rich boilerplate for building React applications with TypeScript and Ant Design components.
 
 ## Features
 
 - ⚡️ **React 18** with TypeScript
-- 🎨 **Shadcn UI** - Beautiful, accessible components built with Radix UI and Tailwind CSS
+- 🎨 **Ant Design** - A comprehensive UI library with enterprise-grade components
 - 🌐 **i18n Support** - Internationalization with react-i18next (English and Spanish included)
 - 🎯 **React Router** - Client-side routing with React Router v6
 - 🌙 **Dark Mode** - Theme switching with system preference support
@@ -19,7 +19,7 @@ A modern, feature-rich boilerplate for building React applications with TypeScri
 ```
 src/
 ├── components/         # Reusable UI components
-│   ├── ui/            # Base UI components from shadcn
+│   ├── ui/            # Base UI components 
 │   └── layout/        # Layout components (Header, Navigation, Settings)
 ├── config/            # Configuration files
 ├── hooks/             # Custom React hooks
@@ -31,7 +31,7 @@ src/
 │   └── pricing/      # Pricing module example
 ├── providers/        # React context providers
 ├── routes/           # Route definitions
-└── styles/           # Global styles and Tailwind config
+└── styles/           # Global styles and theme configuration
 ```
 
 ## Modules
@@ -45,7 +45,7 @@ src/
 ### Features
 
 - **Settings Menu** - Centralized settings management with:
-  - Theme Toggle (Dark/Light mode)
+  - Theme Toggle (Dark/Light mode with Ant Design theme support)
   - Language Switcher (English/Spanish)
 - **Authentication Module** - Complete auth flow with:
   - Login/Register forms with validation
@@ -75,7 +75,7 @@ npm install
 3. Start the development server:
 
 ```bash
-npm run sever
+npm run server
 ```
 
 ## Available Scripts
