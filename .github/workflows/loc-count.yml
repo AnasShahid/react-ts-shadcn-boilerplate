@@ -6,6 +6,6 @@ jobs:
   loc:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Count Lines of Code
-      uses: ducme/loc-count@v1
+      - uses: actions/checkout@v2
+      - name: Count Lines of Code
+        uses: ducme/loc-count@v1
