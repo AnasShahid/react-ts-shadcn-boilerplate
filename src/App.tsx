@@ -4,6 +4,7 @@ import { useEnv } from './hooks/use-env';
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import { ThemeProvider } from './providers/theme-provider';
 
 function App() {
   const env = useEnv();
@@ -16,7 +17,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <ThemeProvider defaultTheme="system" storageKey="ui-theme">
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </Provider>
   );
 }
