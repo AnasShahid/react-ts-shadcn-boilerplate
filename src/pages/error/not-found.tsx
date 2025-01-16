@@ -16,9 +16,7 @@ export function NotFoundPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">
-            {t('error.notFound.description')}
-          </p>
+          <p className="text-muted-foreground">{t('error.notFound.description')}</p>
         </CardContent>
         <CardFooter className="flex justify-center">
           <Button asChild>
