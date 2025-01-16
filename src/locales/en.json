@@ -1,6 +1,7 @@
 {
   "common": {
-    "welcome": "Welcome to React + TypeScript + Shadcn UI",
+    "welcome": "Welcome to React + TypeScript + Ant Design",
+    "appName": "React + TypeScript + Ant Design",
     "navigation": {
       "home": "Home",
       "pricing": "Pricing",
@@ -9,7 +10,8 @@
       "dashboard": "Dashboard",
       "profile": "Profile",
       "settings": "Settings",
-      "logout": "Logout"
+      "logout": "Logout",
+      "theme": "Theme"
     },
     "theme": {
       "light": "Light",
@@ -20,7 +22,7 @@
   },
   "home": {
     "title": "Modern React Boilerplate",
-    "subtitle": "Start your next project with TypeScript, React, and Shadcn UI",
+    "subtitle": "Start your next project with TypeScript, React, and Ant Design",
     "getStarted": "Get Started",
     "learnMore": "Learn More",
     "features": {

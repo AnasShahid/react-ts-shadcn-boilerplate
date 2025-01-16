@@ -9,7 +9,8 @@
       "dashboard": "Panel",
       "profile": "Perfil",
       "settings": "Configuración",
-      "logout": "Cerrar Sesión"
+      "logout": "Cerrar Sesión",
+      "theme": "Tema"
     },
     "theme": {
       "light": "Claro",

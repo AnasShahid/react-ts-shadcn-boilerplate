@@ -1,43 +1,85 @@
-import { Button } from '@/components/ui/button';
+import { Button, Typography, Card, Row, Col, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { CodeOutlined, LayoutOutlined, BulbOutlined, GlobalOutlined } from '@ant-design/icons';
+
+const { Title, Paragraph } = Typography;
 
 export default function Home() {
   const { t } = useTranslation();
 
+  const features = [
+    {
+      icon: <CodeOutlined style={{ fontSize: '24px', color: '#1677ff' }} />,
+      title: t('home.features.typescript'),
+      description: 'Type-safe development with TypeScript',
+    },
+    {
+      icon: <LayoutOutlined style={{ fontSize: '24px', color: '#1677ff' }} />,
+      title: t('home.features.components'),
+      description: 'Beautiful and accessible components',
+    },
+    {
+      icon: <BulbOutlined style={{ fontSize: '24px', color: '#1677ff' }} />,
+      title: t('home.features.themes'),
+      description: 'Switch between light and dark modes',
+    },
+    {
+      icon: <GlobalOutlined style={{ fontSize: '24px', color: '#1677ff' }} />,
+      title: t('home.features.i18n'),
+      description: 'Multi-language support',
+    },
+  ];
+
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center py-12">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-4">{t('home.title')}</h1>
-        <p className="text-xl text-muted-foreground mb-8">{t('home.subtitle')}</p>
-        <div className="flex justify-center gap-4">
-          <Button>
-            <Link to="/auth/signup">{t('home.getStarted')}</Link>
+    <div style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 24px' }}>
+      <div style={{ textAlign: 'center', marginBottom: 64 }}>
+        <Title style={{ fontSize: 48, marginBottom: 16 }}>
+          {t('home.title')}
+        </Title>
+        <Paragraph style={{ fontSize: 20, color: 'rgba(0, 0, 0, 0.45)', marginBottom: 32 }}>
+          {t('home.subtitle')}
+        </Paragraph>
+        <Space size="middle">
+          <Link to="/auth/signup">
+            <Button type="primary" size="large">
+              {t('home.getStarted')}
+            </Button>
+          </Link>
+          <Button size="large">
+            {t('home.learnMore')}
           </Button>
-          <Button type="default">{t('home.learnMore')}</Button>
-        </div>
+        </Space>
       </div>
 
-      <div className="mt-16">
-        <h2 className="text-3xl font-bold text-center mb-8">{t('home.features.title')}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="p-6 rounded-lg border bg-card text-card-foreground">
-            <h3 className="text-lg font-semibold mb-2">{t('home.features.typescript')}</h3>
-            <p className="text-muted-foreground">Type-safe development with TypeScript</p>
-          </div>
-          <div className="p-6 rounded-lg border bg-card text-card-foreground">
-            <h3 className="text-lg font-semibold mb-2">{t('home.features.components')}</h3>
-            <p className="text-muted-foreground">Beautiful and accessible components</p>
-          </div>
-          <div className="p-6 rounded-lg border bg-card text-card-foreground">
-            <h3 className="text-lg font-semibold mb-2">{t('home.features.themes')}</h3>
-            <p className="text-muted-foreground">Switch between light and dark modes</p>
-          </div>
-          <div className="p-6 rounded-lg border bg-card text-card-foreground">
-            <h3 className="text-lg font-semibold mb-2">{t('home.features.i18n')}</h3>
-            <p className="text-muted-foreground">Multi-language support</p>
-          </div>
-        </div>
+      <div style={{ marginBottom: 64 }}>
+        <Title level={2} style={{ textAlign: 'center', marginBottom: 48 }}>
+          {t('home.features.title')}
+        </Title>
+        <Row gutter={[32, 32]}>
+          {features.map((feature, index) => (
+            <Col xs={24} sm={12} lg={6} key={index}>
+              <Card 
+                style={{ height: '100%' }}
+                bodyStyle={{ 
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  padding: 24,
+                }}
+              >
+                <div style={{ marginBottom: 16 }}>{feature.icon}</div>
+                <Title level={4} style={{ marginBottom: 8 }}>
+                  {feature.title}
+                </Title>
+                <Paragraph type="secondary">
+                  {feature.description}
+                </Paragraph>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </div>
     </div>
   );

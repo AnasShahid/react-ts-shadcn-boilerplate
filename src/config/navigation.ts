@@ -17,4 +17,8 @@ export const navigationConfig = {
     title: 'Login',
     href: '/auth/login',
   },
+  signupNav: {
+    title: 'SignUp',
+    href: '/auth/signup',
+  },
 };
