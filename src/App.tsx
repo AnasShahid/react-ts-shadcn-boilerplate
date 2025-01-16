@@ -5,6 +5,26 @@ import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { ConfigProvider, theme } from 'antd';
+import { ThemeProvider } from './providers/theme-provider';
+import { useTheme } from './hooks/use-theme';
+
+function AppContent() {
+  const { theme: currentTheme } = useTheme();
+  const isDark = currentTheme === 'dark';
+
+  return (
+    <ConfigProvider
+      theme={{
+        algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        token: {
+          colorPrimary: '#1677ff',
+        },
+      }}
+    >
+      <RouterProvider router={router} />
+    </ConfigProvider>
+  );
+}
 
 function App() {
   const env = useEnv();
@@ -17,16 +37,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <ConfigProvider
-        theme={{
-          algorithm: theme.defaultAlgorithm,
-          token: {
-            colorPrimary: '#1677ff',
-          },
-        }}
-      >
-        <RouterProvider router={router} />
-      </ConfigProvider>
+      <ThemeProvider defaultTheme="light" storageKey="app-theme">
+        <AppContent />
+      </ThemeProvider>
     </Provider>
   );
 }

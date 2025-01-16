@@ -34,9 +34,7 @@ export default function Home() {
   return (
     <div style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 24px' }}>
       <div style={{ textAlign: 'center', marginBottom: 64 }}>
-        <Title style={{ fontSize: 48, marginBottom: 16 }}>
-          {t('home.title')}
-        </Title>
+        <Title style={{ fontSize: 48, marginBottom: 16 }}>{t('home.title')}</Title>
         <Paragraph style={{ fontSize: 20, color: 'rgba(0, 0, 0, 0.45)', marginBottom: 32 }}>
           {t('home.subtitle')}
         </Paragraph>
@@ -46,9 +44,7 @@ export default function Home() {
               {t('home.getStarted')}
             </Button>
           </Link>
-          <Button size="large">
-            {t('home.learnMore')}
-          </Button>
+          <Button size="large">{t('home.learnMore')}</Button>
         </Space>
       </div>
 
@@ -59,9 +55,9 @@ export default function Home() {
         <Row gutter={[32, 32]}>
           {features.map((feature, index) => (
             <Col xs={24} sm={12} lg={6} key={index}>
-              <Card 
+              <Card
                 style={{ height: '100%' }}
-                bodyStyle={{ 
+                bodyStyle={{
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -73,9 +69,7 @@ export default function Home() {
                 <Title level={4} style={{ marginBottom: 8 }}>
                   {feature.title}
                 </Title>
-                <Paragraph type="secondary">
-                  {feature.description}
-                </Paragraph>
+                <Paragraph type="secondary">{feature.description}</Paragraph>
               </Card>
             </Col>
           ))}
