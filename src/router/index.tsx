@@ -6,6 +6,7 @@ import HomePage from '@/pages/home';
 import { NotFoundPage } from '@/pages/error/not-found';
 import { UnauthorizedPage } from '@/pages/error/unauthorized';
 import { ServerErrorPage } from '@/pages/error/server-error';
+import { HeroSectionDemo } from '@/components/blocks/hero-section-demo';
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <HomePage />,
+        element: <HeroSectionDemo />,
       },
       ...authRoutes,
       ...pricingRoutes,
