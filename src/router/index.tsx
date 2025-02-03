@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import RootLayout from '@/layouts/root-layout';
 import { authRoutes } from '@/modules/auth';
 import { pricingRoutes } from '@/modules/pricing';
-import HomePage from '@/pages/home';
+// import HomePage from '@/pages/home';
 import { NotFoundPage } from '@/pages/error/not-found';
 import { UnauthorizedPage } from '@/pages/error/unauthorized';
 import { ServerErrorPage } from '@/pages/error/server-error';
